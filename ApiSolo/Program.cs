@@ -1,4 +1,8 @@
 
+using LibraryAPI.Model;
+using LibraryAPI.structure;
+using Microsoft.EntityFrameworkCore;
+
 namespace ApiSolo
 {
     public class Program
@@ -10,14 +14,21 @@ namespace ApiSolo
             // Add services to the container.
 
             builder.Services.AddControllers();
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+            // Learn more about configuring OpenAPI at https://aSystem.InvalidOperationException: 'The service collection cannot be modified because it is read-only.'ka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
-
-            var app = builder.Build();
+            //inserção de independencia
+            builder.Services.AddScoped<IBookRepository, BookRepositery>();
 
             //swagger
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            //banco de dados
+            builder.Services.AddDbContext<ConectionContext>(options =>
+                options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+            );
+
+            var app = builder.Build();
 
 
             // Configure the HTTP request pipeline.

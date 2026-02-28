@@ -1,4 +1,6 @@
-﻿namespace LibraryAPI.Model
+﻿using ApiSolo.Model;
+
+namespace LibraryAPI.Model
 {
     public interface IBookRepository
     {
@@ -8,7 +10,7 @@
     
             public void AddBook(Book book);
     
-            public void UpdateBook(Book book);
+            public void UpdateBook(int id,Book book);
     
             public void DeleteBook(int id);
     }

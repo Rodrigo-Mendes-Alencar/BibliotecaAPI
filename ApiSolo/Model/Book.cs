@@ -2,10 +2,14 @@
 {
     public class Book
     {
-        public int id { get; private set; }
-        public string title {get; private set; }
-        public string? author { get; private set; }
-        public bool isborrowed { get; private set; }
+        public int id { get;  private set; }
+        public string title {get;set; }
+        public string? author { get; set; }
+        public bool isborrowed { get;set; }
+
+        public Book()
+        {
+        }
 
         public Book(string title, string author, bool isborrowed)
         {
