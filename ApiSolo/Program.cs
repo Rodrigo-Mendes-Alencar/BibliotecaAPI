@@ -15,6 +15,11 @@ namespace ApiSolo
 
             var app = builder.Build();
 
+            //swagger
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -25,6 +30,8 @@ namespace ApiSolo
 
             app.UseAuthorization();
 
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.MapControllers();
 
