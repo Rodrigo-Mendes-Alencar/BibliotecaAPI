@@ -1,0 +1,6 @@
+@ApiSolo_HostAddress = http://localhost:5045
+
+GET {{ApiSolo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
