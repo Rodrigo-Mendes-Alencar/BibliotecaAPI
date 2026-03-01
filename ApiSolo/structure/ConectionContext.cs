@@ -12,7 +12,7 @@ namespace LibraryAPI.structure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost; Port=5432;Database=Library;Username=postgres;Password=postgres");
+            optionsBuilder.UseNpgsql("Host=localhost; Port=5432;Database=Library;Username=;Password=");
         }
     }
 }
